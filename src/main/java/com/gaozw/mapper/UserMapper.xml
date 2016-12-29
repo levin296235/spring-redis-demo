@@ -7,7 +7,22 @@
         <result column="password" property="password" jdbcType="VARCHAR" />  
         <result column="age" property="age" jdbcType="INTEGER" />  
     </resultMap>  
-  
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
+	<resultmap id="BaseResultMap" type="com.lin.domain.User">
+	    <id column="USER_ID" jdbctype="INTEGER" property="userId">
+	    <result column="USER_NAME" jdbctype="CHAR" property="userName">
+	    <result column="USER_PASSWORD" jdbctype="CHAR" property="userPassword">
+	    <result column="USER_EMAIL" jdbctype="CHAR" property="userEmail">
+	</result></result></result></id></resultmap>
+	<select id="selectUserByUserName" parametertype="java.lang.String" resultmap="BaseResultMap">
+	    SELECT *
+	    FROM t_user
+	    WHERE 1 = 1
+	     
+	        AND USER_NAME = #{userName,jdbcType=VARCHAR}
+	     
+	    ORDER BY USER_ID
+	</select>
     <sql id="Base_Column_List">  
         id, name, password, age  
     </sql>  
