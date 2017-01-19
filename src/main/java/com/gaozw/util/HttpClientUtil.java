@@ -19,11 +19,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 
 public class HttpClientUtil {
-	
-	private static Logger LOGGER = Logger.getLogger(HttpClientUtil.class);
 	
 	public static void doGet(String url) {
         try {
@@ -46,7 +43,6 @@ public class HttpClientUtil {
                 httpGet.abort();
             }
         } catch (Exception e) {
-        	LOGGER.error(e.getMessage(),e);
         }
     }
 
@@ -98,10 +94,8 @@ public class HttpClientUtil {
                 System.out.println("the http method is:" + method.getEntity());
                 long endTime = System.currentTimeMillis();
                 int statusCode = response.getStatusLine().getStatusCode();
-                LOGGER.info("状态码:" + statusCode);
-                LOGGER.info("调用API 花费时间(单位：毫秒)：" + (endTime - startTime));
                 if (statusCode != HttpStatus.SC_OK) {
-                    LOGGER.error("请求失败:" + response.getStatusLine());
+//                    LOGGER.error("请求失败:" + response.getStatusLine());
                     status = 1;
                 }
 
@@ -110,11 +104,11 @@ public class HttpClientUtil {
 
             } catch (IOException e) {
                 //发生网络异常
-                LOGGER.error("exception occurred!\n");
+//                LOGGER.error("exception occurred!\n");
                 //网络错误
                 status = 3;
             } finally {
-                LOGGER.info("调用接口状态：" + status);
+//                LOGGER.info("调用接口状态：" + status);
             }
 
         }

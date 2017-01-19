@@ -8,12 +8,12 @@
         <result column="age" property="age" jdbcType="INTEGER" />  
     </resultMap>  
     <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
-	<resultmap id="BaseResultMap" type="com.lin.domain.User">
+	<!-- <resultmap id="BaseResultMap" type="com.lin.domain.User">
 	    <id column="USER_ID" jdbctype="INTEGER" property="userId">
 	    <result column="USER_NAME" jdbctype="CHAR" property="userName">
 	    <result column="USER_PASSWORD" jdbctype="CHAR" property="userPassword">
 	    <result column="USER_EMAIL" jdbctype="CHAR" property="userEmail">
-	</result></result></result></id></resultmap>
+	</resultmap>
 	<select id="selectUserByUserName" parametertype="java.lang.String" resultmap="BaseResultMap">
 	    SELECT *
 	    FROM t_user
@@ -27,7 +27,7 @@
         id, name, password, age  
     </sql>  
   
-    <!-- 查询用户-->  
+    查询用户  
     <select id="queryByPrimaryKey" resultMap="BaseResultMap"  
         parameterType="java.lang.Integer">  
         select  
@@ -36,14 +36,14 @@
         where id = #{id,jdbcType=INTEGER}  
     </select>  
       
-    <!-- 查询用户-->  
+    查询用户  
     <select id="getAllUser" resultMap="BaseResultMap">  
         select  
         <include refid="Base_Column_List" />  
         from user  
     </select>  
       
-    <!-- 批量查询用户-->  
+    批量查询用户  
     <select id="queryUserByBatch" resultMap="BaseResultMap"  
         parameterType="java.util.Map">  
         select  
@@ -55,7 +55,7 @@
         </foreach>  
     </select>  
       
-    <!-- 插入用户 -->  
+    插入用户  
     <insert id="insertUser" parameterType="com.gaozw.model.User">  
         insert into user    
         <trim prefix="(" suffix=")" suffixOverrides="," >    
@@ -88,7 +88,7 @@
         </trim>     
     </insert>  
       
-    <!-- 批量插入用户 -->  
+    批量插入用户  
     <insert id="insertUserByBatch" parameterType="java.util.List" >  
     insert into USER  
        (ID,  
@@ -108,13 +108,13 @@
          ) A  
     </insert>  
   
-    <!-- 删除用户 -->  
+    删除用户  
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">  
         delete from user  
         where id = #{id,jdbcType=INTEGER}    
     </delete>  
       
-    <!-- 批量删除用户 -->  
+    批量删除用户  
     <delete id="deleteUserByBatch" parameterType="java.util.Map" >  
      delete from user  
      where id IN   
@@ -123,7 +123,7 @@
          </foreach>  
     </delete>  
   
-    <!-- 更新用户 -->  
+    更新用户  
     <update id="updateByPrimaryKey" parameterType="com.gaozw.model.User" >    
         update user    
         <set >    
@@ -138,6 +138,6 @@
           </if>    
         </set>    
         where id = #{id,jdbcType=INTEGER}   
-    </update>  
+    </update>   -->
     
 </mapper>  
