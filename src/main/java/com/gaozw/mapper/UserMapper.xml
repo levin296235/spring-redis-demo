@@ -7,6 +7,9 @@
         <result column="password" property="password" jdbcType="VARCHAR" />  
         <result column="age" property="age" jdbcType="INTEGER" />  
     </resultMap>  
+   <select id="getAllUser" resultMap="BaseResultMap">  
+       select * from tb_user  
+   </select>  
     <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
 	<!-- <resultmap id="BaseResultMap" type="com.lin.domain.User">
 	    <id column="USER_ID" jdbctype="INTEGER" property="userId">
@@ -37,12 +40,11 @@
     </select>  
       
     查询用户  
-    <select id="getAllUser" resultMap="BaseResultMap">  
+	<select id="getAllUser" resultMap="BaseResultMap">  
         select  
         <include refid="Base_Column_List" />  
         from user  
-    </select>  
-      
+    </select>        
     批量查询用户  
     <select id="queryUserByBatch" resultMap="BaseResultMap"  
         parameterType="java.util.Map">  

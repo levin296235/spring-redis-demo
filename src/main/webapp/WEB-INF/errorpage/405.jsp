@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+    <h2 style="color:red;">禁止访问这个页面</h2><br>
   </body>
 </html>
