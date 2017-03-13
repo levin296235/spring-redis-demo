@@ -6,7 +6,7 @@
 -->
 <configuration debug="false" scan="true" scanPeriod="600 seconds">
 	<!-- 引入antx_admin.properties文件 -->  
-    <property resource="properties/antx_admin.properties" /> 
+    <!-- <property resource="properties/antx_admin.properties" />  -->
 	<!-- 
 		appender表示日志输出的方式，该元素必须包含name、classs属性;
 		name，表示appender的唯一标识
@@ -26,18 +26,18 @@
 		<!-- encoder指定编码格式，并根据指定的pattern输出日志信息 -->
 		<encoder charset="UTF-8">
 			<!-- pattern指定日志的输出格式 -->
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
 	<!-- 下面是将日志输入到指定的文件中 -->
-	<appender name="file" class="ch.qos.logback.core.FileAppender">  
+	<appender name="fileAppender" class="ch.qos.logback.core.FileAppender">  
 		<!-- 指定的日志文件名 -->
-		<file>logFile.log</file>
+		<file>${springmvc.root}/logs/logFile.log</file>
 		<!-- 是否追加到文件末尾，默认true -->
 		<append>true</append>
 		<encoder>
-		  <pattern>%-4r [%thread] %-5level %logger{35} - %msg%n</pattern>
+		  <pattern>% %d{yyyy-MM-dd HH:mm:ss}-4r [%thread] %-5level %logger{35} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
@@ -70,8 +70,8 @@
 	<!-- root与logger类似，它表示根logger，只有大于等于level级别的日志才交由appender处理，level默认为DEBUG -->
 	<root level="DEBUG">
 		<appender-ref ref="stdout" />
-		<appender-ref ref="rollingFile" />
-		<appender-ref ref="file" />
+		<!-- <appender-ref ref="rollingFile" /> -->
+		<appender-ref ref="fileAppender" />
 	</root>
 
 	<!-- 

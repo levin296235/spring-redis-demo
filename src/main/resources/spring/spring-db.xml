@@ -10,11 +10,7 @@
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
    
-    <!-- 引入配置文件 -->  
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
-        <property name="location" value="classpath:conf/db.properties" />  
-    </bean>  
-      
+    <!-- 数据库连接池 -->  
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
         <property name="driverClassName" value="${jdbc_driverClassName}" />  
         <property name="url" value="${jdbc_url}" />  

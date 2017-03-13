@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<c:forEach items="${uList }" var="u">  
   		<tr>
   			<td>${u.id }</td>
-  			<td>${u.name }</td>
+  			<td>${u.userName}</td>
   			<td>${u.password }</td>
   			<td>${u.age }</td>
   			<%-- <td><fmt:formatDate value="${u.birthday}" pattern="yyyy-MM-dd HH:mm:ss"/></td> --%>
@@ -41,34 +41,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	</tbody>
   </table>
   <hr/>
-  <table class="table table-striped">
-  <caption>条纹表格布局</caption>
-  <thead>
-    <tr>
-      <th>名称</th>
-      <th>城市</th>
-      <th>邮编</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Tanmay</td>
-      <td>Bangalore</td>
-      <td>560001</td>
-    </tr>
-    <tr>
-      <td>Sachin</td>
-      <td>Mumbai</td>
-      <td>400003</td>
-    </tr>
-    <tr>
-      <td>Uma</td>
-      <td>Pune</td>
-      <td>411027</td>
-    </tr>
-  </tbody>
-</table>
-  
   
   </body>
 </html>

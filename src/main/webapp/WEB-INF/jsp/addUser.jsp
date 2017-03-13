@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <form id="addUser" action="user/addUser" method="post">   
-        userName: <input id="name" name="name" /><br/>   
+        userName: <input id="username" name="username" /><br/>   
         password: <input id="password" name="password" /><br/>   
         age: <input id="age" name="age"/><br/>   
         <input type="submit" value="添加新用户"/>   

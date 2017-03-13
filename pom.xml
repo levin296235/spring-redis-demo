@@ -11,7 +11,7 @@
   <!-- 用来设置版本号 -->  
   <properties>  
   	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <jdk.version>1.7</jdk.version>
+      <jdk.version>1.8</jdk.version>
       <srping.version>4.3.3.RELEASE</srping.version>  
       <mybatis.version>3.2.8</mybatis.version>  
       <slf4j.version>1.7.12</slf4j.version>  
@@ -133,6 +133,11 @@
       </dependency>  
       <!-- log start -->
       <!-- LogBack dependencies -->
+      <dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.12</version>
+	  </dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
@@ -208,6 +213,21 @@
 	    <artifactId>jedis</artifactId>
 	    <version>2.7.3</version>
 	</dependency>
+	<dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>1.0.18</version>
+    </dependency>
+	<dependency>
+	    <groupId>cglib</groupId>
+	    <artifactId>cglib</artifactId>
+	    <version>3.2.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.data</groupId>
+	    <artifactId>spring-data-redis</artifactId>
+	    <version>1.7.2.RELEASE</version>
+	</dependency>
   </dependencies>  
   <build>
     <finalName>learn_new</finalName>
@@ -231,7 +251,7 @@
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
+            <version>3.6.1</version>
             <configuration>
                 <source>${jdk.version}</source> <!-- 源代码使用的开发版本 -->
                 <target>${jdk.version}</target> <!-- 需要生成的目标class文件的编译版本 -->

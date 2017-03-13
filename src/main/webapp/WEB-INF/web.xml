@@ -32,6 +32,14 @@
         <filter-name>encodingFilter</filter-name>  
         <url-pattern>/*</url-pattern>  
     </filter-mapping>  
+    <!-- 防止Spring内存溢出监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
+    <!-- 使Spring支持request与session的scope,如:<bean id="loginAction" scope="request"/> -->
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
     <!-- 添加日志监听器 -->
     <context-param>
         <param-name>logbackConfigLocation</param-name>
@@ -53,7 +61,11 @@
     <servlet-mapping>  
         <servlet-name>SpringMVC</servlet-name>  
         <url-pattern>/</url-pattern>  
-    </servlet-mapping>  
+    </servlet-mapping>
+     <!-- 配置SESSION超时，单位是分钟 -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>  
     <!-- 错误跳转页面 -->
 	<error-page>
 		<!-- 路径不正确 -->
