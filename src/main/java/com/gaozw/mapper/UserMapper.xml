@@ -8,7 +8,7 @@
         <result column="age" property="age" jdbcType="INTEGER" />  
     </resultMap>  
    <select id="getAllUser" resultMap="BaseResultMap">  
-       select * from tb_user  
+       select * from test_user  
    </select>  
     <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！ -->
 	<!-- <resultmap id="BaseResultMap" type="com.lin.domain.User">

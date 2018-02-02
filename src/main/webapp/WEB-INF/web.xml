@@ -15,7 +15,7 @@
      <!-- 设计路径变量值 -->
 	<context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>springmvc.root</param-value>
+		<param-value>learn_new.root</param-value>
 	</context-param>
 	
     <!-- 编码过滤器 -->  

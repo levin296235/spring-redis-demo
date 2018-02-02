@@ -33,7 +33,7 @@
 	<!-- 下面是将日志输入到指定的文件中 -->
 	<appender name="fileAppender" class="ch.qos.logback.core.FileAppender">  
 		<!-- 指定的日志文件名 -->
-		<file>${springmvc.root}/logs/logFile.log</file>
+		<file>${learn_new.root}/logs/logFile.log</file>
 		<!-- 是否追加到文件末尾，默认true -->
 		<append>true</append>
 		<encoder>
